@@ -1,11 +1,11 @@
-package tests.day2_WebElementBasics_BasicLocators;
+package tests.day2_WebElementBasics_Locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utilities.WebDriverFactory;
 
-public class nameLocator {
+public class tagNameLocator {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -13,9 +13,9 @@ public class nameLocator {
         driver.manage().window().maximize();
         driver.get("https://practice.cydeo.com/sign_up");
 
-        WebElement fullNAmeInbox = driver.findElement(By.name("full_name"));
+        WebElement fullNAmeInbox = driver.findElement(By.tagName("input"));
         WebElement emailInbox = driver.findElement(By.name("email"));
-        WebElement signUpButton = driver.findElement(By.name("wooden_spoon"));
+        WebElement signUpButton = driver.findElement(By.tagName("button"));
 
         fullNAmeInbox.sendKeys("Azat Bayram");
         emailInbox.sendKeys("example@gmail.com");
