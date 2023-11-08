@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -38,6 +39,30 @@ public class actionsClassTest {
 
         actions.dragAndDrop(dragTarget, dropTarget).perform();
 
+    }
+
+    @Test
+    public void hoverTest() throws InterruptedException {
+        driver.get("https://practice.cydeo.com/hovers");
+        Thread.sleep(2000);
+
+        WebElement img1 = driver.findElement(By.cssSelector("div.figure:nth-of-type(1)"));
+        WebElement img2 = driver.findElement(By.cssSelector("div.figure:nth-of-type(2)"));
+        WebElement img3 = driver.findElement(By.cssSelector("div.figure:nth-of-type(3)"));
+        WebElement prof1 = driver.findElement(By.xpath("//h5[text()='name: user1']"));
+        WebElement prof2 = driver.findElement(By.xpath("//h5[text()='name: user2']"));
+        WebElement prof3 = driver.findElement(By.xpath("//h5[text()='name: user3']"));
+
+        actions.moveToElement(img1).perform();
+        Assert.assertTrue(prof1.isDisplayed(), "Verify that profile 1 is displayed");
+        Thread.sleep(2000);
+
+        actions.moveToElement(img2).perform();
+        Assert.assertTrue(prof2.isDisplayed(), "Verify that profile 1 is displayed");
+        Thread.sleep(2000);
+
+        actions.moveToElement(img3).perform();
+        Assert.assertTrue(prof3.isDisplayed(), "Verify that profile 1 is displayed");
     }
 
 
