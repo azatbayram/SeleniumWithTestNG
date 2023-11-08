@@ -12,7 +12,7 @@ public class CloseAndQuit {
 
         WebDriver driver=new ChromeDriver();
 
-        driver.navigate().to("http://practice.cybertekschool.com");
+        driver.navigate().to("https://practice.cydeo.com/");
 
         Thread.sleep(3000);
 
@@ -22,7 +22,7 @@ public class CloseAndQuit {
         //giving new browser tab
         driver=new ChromeDriver();
 
-        driver.get("http://practice.cybertekschool.com/open_new_tab");
+        driver.get("https://practice.cydeo.com/");
 
         Thread.sleep(3000);
         //quit(); --> method close all tabs
