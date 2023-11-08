@@ -3,26 +3,26 @@ package tests.day1_WebDriverBasics;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
-public class openBrowser {
+public class NavigationDemo {
 
     public static void main(String[] args) throws InterruptedException {
 
-        // this line make chrome get ready for automation
         WebDriverManager.chromedriver().setup();
 
-        //create chrome driver
-        //each driver represents one chrome browser
         WebDriver driver=new ChromeDriver();
-        //WebDriver driver=new SafariDriver();
 
-        driver.get("https://www.facebook.com/");
+        driver.get("https://twitter.com/home");
 
         Thread.sleep(3000);
 
-        driver.get("https://www.google.com/maps");
+        driver.navigate().to("https://www.facebook.com/");
 
+        driver.navigate().back();
+        Thread.sleep(3000);
+        driver.navigate().forward();
+        Thread.sleep(3000);
+        driver.navigate().refresh();
         driver.quit();
     }
 }
