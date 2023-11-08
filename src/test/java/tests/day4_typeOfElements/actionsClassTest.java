@@ -65,6 +65,17 @@ public class actionsClassTest {
         Assert.assertTrue(prof3.isDisplayed(), "Verify that profile 1 is displayed");
     }
 
+    @Test
+    public void dragAndDropChaining() throws InterruptedException {
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        Thread.sleep(2000);
+
+        WebElement dragTarget= driver.findElement(By.cssSelector("div#draggable"));
+        WebElement dropTarget=driver.findElement(By.cssSelector("div#droptarget"));
+
+        actions.moveToElement(dragTarget).clickAndHold().moveToElement(dropTarget).release().perform();
+    }
+
 
 
 
