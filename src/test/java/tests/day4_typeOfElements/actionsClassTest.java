@@ -32,7 +32,7 @@ public class actionsClassTest {
     public void dragAndDrop() throws InterruptedException {
 
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         WebElement dragTarget= driver.findElement(By.cssSelector("div#draggable"));
         WebElement dropTarget=driver.findElement(By.cssSelector("div#droptarget"));
@@ -68,7 +68,7 @@ public class actionsClassTest {
     @Test
     public void dragAndDropChaining() throws InterruptedException {
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         WebElement dragTarget= driver.findElement(By.cssSelector("div#draggable"));
         WebElement dropTarget=driver.findElement(By.cssSelector("div#droptarget"));
