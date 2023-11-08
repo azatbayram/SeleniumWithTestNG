@@ -1,4 +1,4 @@
-package tests.day2_WebElementBasics;
+package tests.day2_WebElementBasics_BasicLocators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
