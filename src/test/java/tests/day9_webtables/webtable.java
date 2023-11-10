@@ -89,5 +89,37 @@ public class webtable {
         System.out.println(singleCell.getText());
     }
 
+    @Test
+    public void printAllCellsByIndex(){
+        int numColumns = getNumberOfColumns();
+        int numRows = getNumberOfRows();
+
+        List<WebElement> headers = driver.findElements(By.cssSelector("tbody tr th"));
+        headers.remove(0);
+
+        for (WebElement header : headers) {
+            System.out.print(header.getText() + " | ");
+        }
+        System.out.println();
+
+        for (int i=2; i<=numRows; i++){
+            for (int j=2; j<=numColumns; j++){
+                WebElement oneCell = driver.findElement(By.xpath("((//table[@class = 'SampleTable']/tbody/tr)["+i+"]/td)["+j+"]"));
+                System.out.print(oneCell.getText() + " | ");
+            }
+            System.out.println();
+        }
+    }
+
+    private int getNumberOfColumns(){
+        List<WebElement> headers = driver.findElements(By.cssSelector("tbody tr th"));
+        return headers.size();
+    }
+
+    private int getNumberOfRows(){
+        List<WebElement> rowsWithHeader = driver.findElements(By.xpath("//table[@class = 'SampleTable']/tbody/tr"));
+        return rowsWithHeader.size();
+    }
+
 
 }
