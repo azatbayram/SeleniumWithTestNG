@@ -121,5 +121,13 @@ public class webtable {
         return rowsWithHeader.size();
     }
 
+    @Test
+    public void getCellInRelationToAnotherCellInSameRow(){
+        String name = "John Doe";
+        String xPath = "(//table[@class = 'SampleTable']/tbody/tr/td)[.='"+ name +"']/../td[6]";
+        WebElement address = driver.findElement(By.xpath(xPath));
+        System.out.println(address.getText());
+    }
+
 
 }
