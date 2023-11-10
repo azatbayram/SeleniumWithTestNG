@@ -83,5 +83,11 @@ public class webtable {
         }
     }
 
+    @Test
+    public void getSingleCell(){
+        WebElement singleCell = driver.findElement(By.xpath("((//table[@class = 'SampleTable']/tbody/tr)[3]/td)[6]"));
+        System.out.println(singleCell.getText());
+    }
+
 
 }
