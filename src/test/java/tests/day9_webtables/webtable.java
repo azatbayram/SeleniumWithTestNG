@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class webtable {
@@ -36,6 +37,26 @@ public class webtable {
 
         String name = "Ned Stark";
         Assert.assertTrue(table.getText().contains(name));
+    }
+
+    @Test
+    public void getAllHeaders(){
+
+        List<WebElement> headers = driver.findElements(By.cssSelector("tbody tr th"));
+        System.out.println(headers.size());
+
+        for (WebElement header : headers) {
+            System.out.println(header.getText());
+        }
+
+        //number of rows with headers
+        List<WebElement> rowsWithHeader = driver.findElements(By.cssSelector("tbody tr"));
+        System.out.println(rowsWithHeader.size());
+
+        //number of rows without header
+        List<WebElement> rowsWithoutHeader = driver.findElements(By.cssSelector("tbody tr"));
+        rowsWithoutHeader.remove(0);
+        System.out.println(rowsWithoutHeader.size());
 
     }
 }
