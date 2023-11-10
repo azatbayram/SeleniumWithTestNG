@@ -50,13 +50,27 @@ public class webtable {
         }
 
         //number of rows with headers
-        List<WebElement> rowsWithHeader = driver.findElements(By.cssSelector("tbody tr"));
+        List<WebElement> rowsWithHeader = driver.findElements(By.xpath("//table[@class = 'SampleTable']/tbody/tr"));
         System.out.println(rowsWithHeader.size());
 
         //number of rows without header
-        List<WebElement> rowsWithoutHeader = driver.findElements(By.cssSelector("tbody tr"));
+        List<WebElement> rowsWithoutHeader = driver.findElements(By.xpath("//table[@class = 'SampleTable']/tbody/tr"));
         rowsWithoutHeader.remove(0);
         System.out.println(rowsWithoutHeader.size());
+
+    }
+
+    @Test
+    public void getRow(){
+        WebElement row2 = driver.findElement(By.xpath("(//table[@class = 'SampleTable']/tbody/tr)[3]"));
+        System.out.println(row2.getText());
+
+        List<WebElement> numRows = driver.findElements(By.xpath("//table[@class = 'SampleTable']/tbody/tr"));
+
+
+        for (int i=1; i<numRows.size(); i++){
+            System.out.println(i + " " + numRows.get(i).getText());
+        }
 
     }
 }
