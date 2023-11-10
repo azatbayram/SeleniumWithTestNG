@@ -73,4 +73,15 @@ public class webtable {
         }
 
     }
+
+    @Test
+    public void getAllCellInOneRow(){
+        List<WebElement> allCellsInOneRow = driver.findElements(By.xpath("(//table[@class = 'SampleTable']/tbody/tr)[3]/td"));
+
+        for (WebElement oneCell: allCellsInOneRow) {
+            System.out.println(oneCell.getText());
+        }
+    }
+
+
 }
