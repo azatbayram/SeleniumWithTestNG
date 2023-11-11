@@ -1,8 +1,8 @@
 package tests.pages;
 
-import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import utilities.Driver;
 
 public class ContactsPage extends BasePage {
 
